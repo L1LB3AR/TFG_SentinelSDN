@@ -8,7 +8,7 @@ Imagina que hoy en día todo está conectado: las cámaras de seguridad, las bom
 Si un ladrón consigue entrar por la bombilla inteligente del jardín, una vez dentro de la casa puede moverse libremente por los pasillos hasta llegar a tu caja fuerte (tus datos bancarios o fotos privadas). 
 Normalmente, esto solo se detecta si alguien mira las cámaras por casualidad, y para cuando quieres reaccionar, el ladrón ya se ha escapado con el botín.
 
-Nuestra Solución: La Casa que se Defiende Sola. 
+Nuestra Solución: La casa que se defiende sola. 
 
 Hemos creado un sistema de seguridad inteligente para la "nube" que no necesita que un humano esté mirando la pantalla. Funciona así:
 
