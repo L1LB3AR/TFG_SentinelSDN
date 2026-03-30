@@ -8,7 +8,8 @@ Imagina que hoy en día todo está conectado: las cámaras de seguridad, las bom
 Si un ladrón consigue entrar por la bombilla inteligente del jardín, una vez dentro de la casa puede moverse libremente por los pasillos hasta llegar a tu caja fuerte (tus datos bancarios o fotos privadas). 
 Normalmente, esto solo se detecta si alguien mira las cámaras por casualidad, y para cuando quieres reaccionar, el ladrón ya se ha escapado con el botín.
 
-Nuestra Solución: La Casa que se Defiende Sola
+Nuestra Solución: La Casa que se Defiende Sola. 
+
 Hemos creado un sistema de seguridad inteligente para la "nube" que no necesita que un humano esté mirando la pantalla. Funciona así:
 
 - Vigilancia 24/7: Tenemos sensores que analizan cómo se comportan los aparatos. Si una bombilla de repente intenta "abrir la caja fuerte", el sistema sabe que algo va mal.
@@ -22,7 +23,7 @@ En resumen: Hemos pasado de una seguridad que solo avisa cuando ya te han robado
 DIRECTRICES: 
 
 🛠️ 1. Redes: Ingeniería de Infraestructura Programable (VPC & Routing)
-El diseño de la red no es solo "crear subredes", es definir el plano de datos sobre el cual actuará vuestra lógica.
+El diseño de la red no es solo "crear subredes", es definir el plano de datos sobre el cual actuará nuestra lógica.
 
 A. Segmentación de Red (Layer 3)
   VPC (Virtual Private Cloud): Debes diseñar un direccionamiento IP que permita escalabilidad. Un bloque CIDR estándar como   10.0.0.0/16 es ideal.
@@ -35,10 +36,10 @@ Diseño de Subredes:
 
 - Forensics/Quarantine Subnet (/24): Una zona de "arena" (sandbox) donde el tráfico está restringido y monitorizado al 100%.
 
-- Enrutamiento Dinámico: Debes investigar cómo las Route Tables pueden ser manipuladas por la API. El concepto clave es el    "Blackholing" (enviar tráfico a una interfaz inexistente) o la redirección hacia un VPC Endpoint.
+- Enrutamiento Dinámico: Debemos investigar cómo las Route Tables pueden ser manipuladas por la API. El concepto clave es el    "Blackholing" (enviar tráfico a una interfaz inexistente) o la redirección hacia un VPC Endpoint.
 
 B. Seguridad Perimetral y de Host
-  Security Groups (SG): Actúan como firewalls stateful. Debes definir una nomenclatura clara (ej. SG-IoT-Production vs SG-    IoT-Quarantine).
+  Security Groups (SG): Actúan como firewalls stateful. Debemos definir una nomenclatura clara (ej. SG-IoT-Production vs SG-    IoT-Quarantine).
 
   VPC Flow Logs: Es el "WireShark" de la nube. Debes configurar la captura de metadatos de red (IP origen/destino, puerto,    protocolo, bytes, acción ACCEPT/REJECT) y entender cómo se estructuran en formato JSON o Parquet para que Ciber y Python    puedan procesarlos.
 
@@ -84,7 +85,7 @@ Parsing de JSON: Recibirás un evento de EventBridge. Debes "parsear" el objeto 
 - Snapshotting Automático: Un toque de rigor extra: antes de aislar la máquina, tu script de Python debería lanzar un EBS     Snapshot (copia de seguridad del disco) para que el compañero de Ciber pueda hacer análisis forense después sin miedo a     que el atacante borre huellas.
 
 C. Seguridad del Código (IAM Role)
-  IAM Policies: No uses AdministratorAccess. Debes escribir una política JSON que solo permita:
+  IAM Policies: No uses AdministratorAccess. Debemos escribir una política JSON que solo permita:
 
 ec2:DescribeInstances
 
